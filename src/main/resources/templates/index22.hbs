@@ -1,0 +1,38 @@
+{{#partial "content"}}
+    <body style="background-image:url('/images/5aa1b61613119.jpg');
+             background-repeat:no-repeat;
+             background-size: cover;font-family: 'Cookie', cursive;font-size:25px" >
+    <div class="well" style="align-items:center;opacity:0.7;">
+
+        <img src="images/Welcome-PNG-Clipart.png" style="width:60%;height:50%;margin-left:20%;">
+    </div>
+    <div class="well" style="width:50%;text-align:center;margin-left:20%">
+        {{#if squads}}
+            {{#each squads }}
+                <p>Currents squads:</p>
+                <p>{{ name }} <a href="/squads/{{id}}">read more...</a></p>
+
+            {{/each}}
+        {{else}}
+            <p>No squads!</p>
+        {{/if}}
+    </div>
+    </body>
+    <footer class="footer">
+        <p>Brian Muthaka copyright 2020</p>
+    </footer>
+    <style>
+        .footer {
+           position: fixed;
+           left: 0;
+           bottom: 0;
+           width: 100%;
+           background-color: black;
+           color: white;
+           text-align: center;
+        }
+        </style>
+
+{{/partial}}
+
+{{> layout.hbs}}

@@ -1,0 +1,42 @@
+{{#partial "content"}}
+    <body style="background-image:url('/images/5aa1b61613119.jpg');
+             background-repeat:no-repeat;
+             background-size: cover;font-family: 'Cookie', cursive;font-size:25px" >
+    {{#if heroes}}
+        {{#each heroes }}
+            <div class="card w-50">
+                <div class="well">
+                    <h5 class="card-title">{{ name }} </h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="/heroes/{{id}}" class="btn btn-primary">read more...</a>
+                    <div class="container">
+                        <p class="text-muted"><a href="/heroes/delete">DELETE ALL heroes/a></p>
+                    </div>
+
+                </div>
+            </div>
+            <p>Current hero:</p>
+
+        {{/each}}
+    {{else}}
+        <p>No heroes!</p>
+    {{/if}}
+    </body>
+    <footer class="footer">
+        <p>Esther Carrelle copyright 2019</p>
+
+    </footer>
+    <style>
+            .footer {
+               position: fixed;
+               left: 0;
+               bottom: 0;
+               width: 100%;
+               background-color: black;
+               color: white;
+               text-align: center;
+            }
+            </style>
+{{/partial}}
+
+{{> layout.hbs}}

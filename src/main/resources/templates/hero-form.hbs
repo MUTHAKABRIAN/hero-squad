@@ -1,0 +1,64 @@
+{{#partial "content"}}
+    <link rel='stylesheet' href='css/App.css'>
+    <link href="https://fonts.googleapis.com/css?family=Cookie|Indie+Flower&display=swap" rel="stylesheet">
+    <body style="background-image:url('/images/5aa1b61613119.jpg');
+             background-repeat:no-repeat;
+             background-size: cover;font-family: 'Cookie', cursive;font-size:25px" >
+
+
+    <div class="well" style="width:50%">
+
+    {{#if editHero}}
+            <h1>Edit this hero!</h1>
+            <form action="/heroes/{{editHero.id}}" method="post">
+                <label for="name">Edit this hero's name</label><br>
+                <input id="name" name="name" type="text" value="{{editHero.name}}"><br>
+                <label for="age">Edit this hero's age</label><br>
+                <input id="age" name="age" type="number" value="{{editHero.age}}"><br>
+                <label for="specialPower">Edit this hero's special power</label><br>
+                <input id="specialPower" name="specialPower" type="text" value="{{editHero.specialPower}}"><br>
+                <label for="weakness">Edit this hero's weakness</label><br>
+                <input id="weakness" name="weakness" type="text" value="{{editHero.weakness}}"><br>
+
+        </div>
+    {{else}}
+        <div class="well">
+
+            <h1>Add a new hero!</h1>
+
+        <form action="/heroes" method="post">
+
+            <label for="name">Hero name</label><br>
+            <input id="name" name="name" type="text"><br>
+            <label for="age">Hero age </label><br>
+            <input id="age" name="age" type="number"><br>
+            <label for="specialPower">Hero special power</label><br>
+            <input id="specialPower" name="specialPower" type="text"><br>
+            <label for="weakness">Hero weakness</label><br>
+            <input id="weakness" name="weakness" type="text"><br>
+
+    {{/if}}
+
+        <button type="submit" class="btn btn-default">Add hero!</button>
+    </form>
+    </div>
+    </body>
+    <footer class="footer">
+        <p>Brian Muthaka copyright 2020</p>
+
+    </footer>
+    <style>
+        .footer {
+           position: fixed;
+           left: 0;
+           bottom: 0;
+           width: 100%;
+           background-color: black;
+           color: white;
+           text-align: center;
+        }
+        </style>
+
+{{/partial}}
+
+{{> layout.hbs}}

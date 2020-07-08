@@ -1,0 +1,72 @@
+{{#partial "content"}}
+    <body style="background-image:url('/images/5aa1b61613119.jpg');
+             background-repeat:no-repeat;
+             background-size: cover;font-family: 'Cookie', cursive;font-size:25px" >
+    <div class="well">
+
+
+        {{#if editSquad}}
+            <h1>Edit this squad!</h1>
+        <form action="/squads/{{editSquad.id}}" method="post">
+            <label for="name">Edit this squad's name</label><br>
+            <input id="name" name="name" type="text" value="{{editSquad.name}}"><br>
+            <label for="age">Edit this squad's age</label><br>
+            <input id="age" name="size" type="number" value="{{editSquad.size}}"><br>
+            <label for="weakness">Edit this squad's weakness</label><br>
+            <input id="weakness" name="cause" type="text" value="{{editSquad.cause}}"><br>
+
+
+
+        {{else}}
+            <h1>Add a new squad</h1>
+
+        <form action="/squads" method="post">
+
+        <fieldset >
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="name" class="form-control" name="name" id="inputEmail" placeholder="name"><br>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">cause</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="Cause" name="cause"><br>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="size" class="col-sm-2 col-form-label">Size</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="size"id="size" placeholder="size"><br>
+                </div>
+            </div>
+
+        {{/if}}
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </fieldset>
+    </form>
+    </div>
+    </body>
+    <footer class="footer">
+        <p>Brian Muthaka copyright 2020</p>
+    </footer>
+    <style>
+      .footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+        background-color: black;
+          color: white;
+        text-align: center;
+               }
+   </style>
+
+{{/partial}}
+
+{{> layout.hbs}}

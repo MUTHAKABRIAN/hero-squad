@@ -1,0 +1,39 @@
+{{#partial "content"}}
+    <body style="background-image:url('/images/5aa1b61613119.jpg');
+             background-repeat:no-repeat;
+             background-size: cover;font-family: 'Cookie', cursive;font-size:25px" >
+    <div class="well" style="opacity:0.8;width:50%">
+        <p>name:</p>
+
+        <p>{{ squad.name }}</p>
+        <p>Size:</p>
+
+        <p>{{ squad.size}}</p>
+        <p>special cause</p>
+
+        <p>{{ squad.cause}}</p>
+        <a href="/squads/{{squad.id}}/update">Edit this squad</a><br>
+        <a href="/squads/{{squad.id}}/delete">DELETE this squad(no undo)</a>
+        </p>
+    </div>
+
+
+    </body>
+    <footer class="footer">
+        <p>Brian Muthaka copyright 2020</p>
+
+    </footer>
+    <style>
+        .footer {
+           position: fixed;
+           left: 0;
+           bottom: 0;
+           width: 100%;
+           background-color: black;
+           color: white;
+           text-align: center;
+        }
+        </style>
+{{/partial}}
+
+{{> layout.hbs}}
